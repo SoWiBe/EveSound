@@ -8,13 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddGrpc();
 
-var app = builder.Build();
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule(new DefaultInfrastructureModule());
 });
+
+
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.MapGrpcService<UserService>();
 app.MapGet("/",
