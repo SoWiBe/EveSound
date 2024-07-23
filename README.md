@@ -14,7 +14,7 @@ Just Music :)
 - Crud
 
 **Message Broker**
-- _Kafka_ for listen when auth was success or created new user
+- Kafka for listen when auth was success or created new user
 
 **Db**
 - MongoDb
