@@ -8,11 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+        <Protobuf Include="Protos\user.proto" GrpcServices="Server" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+        <PackageReference Include="MongoDB.Driver" Version="2.27.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -20,7 +21,6 @@
       <Folder Include="Abstractions\Services\" />
       <Folder Include="Infrastructure\DI\" />
       <Folder Include="Infrastructure\DB\" />
-      <Folder Include="Infrastructure\Models\" />
       <Folder Include="Infrastructure\Repositories\" />
       <Folder Include="Infrastructure\Services\" />
     </ItemGroup>

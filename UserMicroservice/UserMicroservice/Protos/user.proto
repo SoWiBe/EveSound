@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserMicroservice";
+
+package greet;
+
+service User {
+    rpc CreateUser (CreateRequest) returns (CreateReply);
+    rpc GetUsers (GetAllRequest) returns (GetAllReply);
+    rpc UpdateUser (UpdateRequest) returns (UpdateReply);
+    rpc DeleteUser (DeleteRequest) returns (DeleteReply);
+}
+
+message CreateRequest {
+    string login = 1;
+    string password = 2;
+    string email = 3;
+}
+message CreateReply {
+    string message = 1;
+}
+
+message GetAllRequest {}
+message GetAllReply { 
+    repeated UserEntity users = 1; 
+}
+
+message UpdateRequest {
+    UserEntity user = 1;
+}
+message UpdateReply {
+    string message = 1;
+}
+
+message DeleteRequest {
+    string id = 1;
+}
+message DeleteReply {
+    string message = 1;
+}
+
+message UserEntity {
+    string id = 1;
+    string login = 2;
+    string email = 3;
+    string password = 4;
+}

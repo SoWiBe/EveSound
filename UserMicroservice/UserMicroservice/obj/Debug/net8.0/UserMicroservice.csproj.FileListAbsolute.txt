@@ -40,6 +40,9 @@ D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Use
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\UserMicroservice.runtimeconfig.json
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\UserMicroservice.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\UserMicroservice.pdb
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\AWSSDK.Core.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\DnsClient.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Google.Protobuf.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.AspNetCore.Server.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.AspNetCore.Server.ClientFactory.dll
@@ -47,6 +50,16 @@ D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grp
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.Net.Client.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.Net.Common.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\SharpCompress.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Snappier.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\ZstdSharp.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\obj\Debug\net8.0\UserMicroservice.csproj.AssemblyReference.cache
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\obj\Debug\net8.0\UserMicroservice.GeneratedMSBuildEditorConfig.editorconfig
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\obj\Debug\net8.0\UserMicroservice.AssemblyInfoInputs.cache
