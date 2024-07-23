@@ -8,6 +8,7 @@ service User {
     rpc CreateUser (CreateRequest) returns (CreateReply);
     rpc GetUsers (GetAllRequest) returns (GetAllReply);
     rpc UpdateUser (UpdateRequest) returns (UpdateReply);
+    rpc DeleteUser (DeleteRequest) returns (DeleteReply);
 }
 
 message CreateRequest {
