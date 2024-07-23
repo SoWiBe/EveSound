@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "UserMicroservice";
+option csharp_namespace = "TestClient";
 
 package greet;
 
