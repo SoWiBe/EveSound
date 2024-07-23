@@ -12,6 +12,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Autofac" Version="8.0.0" />
+        <PackageReference Include="Autofac.Configuration" Version="7.0.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
         <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
         <PackageReference Include="MongoDB.Driver" Version="2.27.0" />
     </ItemGroup>
@@ -19,8 +22,8 @@
     <ItemGroup>
       <Folder Include="Abstractions\Repositories\" />
       <Folder Include="Abstractions\Services\" />
+      <Folder Include="Infrastructure\Data\Autofac\" />
       <Folder Include="Infrastructure\DI\" />
-      <Folder Include="Infrastructure\DB\" />
       <Folder Include="Infrastructure\Repositories\" />
       <Folder Include="Infrastructure\Services\" />
     </ItemGroup>
