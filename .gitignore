@@ -1,5 +1,5 @@
-UserMicroservice/UserMicroservice/bin/
-UserMicroservice/UserMicroservice/obj/
+/UserMicroservice/UserMicroservice/bin/
+/UserMicroservice/UserMicroservice/obj/
 
 bin
 obj
