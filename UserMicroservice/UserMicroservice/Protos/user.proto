@@ -6,6 +6,7 @@ package greet;
 
 service User {
     rpc CreateUser (CreateRequest) returns (CreateReply);
+    rpc GetUsers (GetAllRequest) returns (GetAllReply);
 }
 
 message CreateRequest {
@@ -16,4 +17,14 @@ message CreateRequest {
 
 message CreateReply {
     string message = 1;
+}
+
+message GetAllRequest {}
+message GetAllReply { repeated UserEntity users = 1;  }
+
+message UserEntity {
+    string id = 1;
+    string login = 2;
+    string email = 3;
+    string password = 4;
 }
