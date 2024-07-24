@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{712AD9F5-0A27-4D99-BE2E-6E03B9B9933A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{712AD9F5-0A27-4D99-BE2E-6E03B9B9933A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712AD9F5-0A27-4D99-BE2E-6E03B9B9933A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712AD9F5-0A27-4D99-BE2E-6E03B9B9933A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712AD9F5-0A27-4D99-BE2E-6E03B9B9933A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
