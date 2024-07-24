@@ -2,7 +2,8 @@
 Just Music :)
 
 # Architecture Scheme
-![image](https://github.com/user-attachments/assets/9735f69c-6aef-46f1-9fde-b52e005d4085)
+![image](https://github.com/user-attachments/assets/aa1f698f-2e23-4971-a055-4c9823825625)
+
 
 # Microservices
 ## User Microservice
