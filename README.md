@@ -9,6 +9,7 @@ Just Music :)
 ## User Microservice
 **Communication with Facade**
 - grpc
+
 **Stack**
 - Asp.net
 - Apache Kafka
@@ -17,6 +18,7 @@ Just Music :)
 ## Music Microservice
 **Communication with Facade**
 - REST
+
 **Stack**
 - Spring Boot
 - Apache Kafka
