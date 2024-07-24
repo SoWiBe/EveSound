@@ -1,4 +1,7 @@
-package infrastructure;
+package infrastructure.models;
+
+import infrastructure.models.enums.PorodaType;
+import infrastructure.models.enums.Sex;
 
 /*
     Example for training

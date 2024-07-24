@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.models;
 
 /*
     @Author Slava
@@ -13,4 +13,5 @@ package infrastructure;
     *? text; - текст трека
  */
 public class Music {
+
 }

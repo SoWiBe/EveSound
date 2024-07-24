@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.models.enums;
 
 public enum  Sex {
     Male,

@@ -1,6 +1,6 @@
 package com.example.MusicMicroservice.controllers;
 
-import infrastructure.Music;
+import infrastructure.models.Music;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
