@@ -15,6 +15,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
     containerBuilder.RegisterModule(new DefaultInfrastructureModule());
 });
 
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.MapGrpcService<UserService>();
