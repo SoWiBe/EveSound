@@ -1,4 +1,4 @@
-@Facade_HostAddress = http://localhost:5089
+@Facade_HostAddress = https://localhost:5271
 
 GET {{Facade_HostAddress}}/weatherforecast/
 Accept: application/json
