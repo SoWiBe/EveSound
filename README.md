@@ -7,16 +7,22 @@ Just Music :)
 
 # Microservices
 ## User Microservice
-
 **Communication with Facade**
 - grpc
-
-**Endpoints**
-- Crud
-
-**Message Broker**
-- Kafka for listen when auth was success or created new user
-
-**Db**
+**Stack**
+- Asp.net
+- Apache Kafka
 - MongoDb
+
+## Music Microservice
+**Communication with Facade**
+- REST
+**Stack**
+- Spring Boot
+- Apache Kafka
+- Redis
+- MongoDb
+
+
+
 
