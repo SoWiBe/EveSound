@@ -51,9 +51,18 @@ public class UserService : User.UserBase
 
     }
 
-    public override Task<UpdateReply> UpdateUser(UpdateRequest request, ServerCallContext context)
+    public override async Task<UpdateReply> UpdateUser(UpdateRequest request, ServerCallContext context)
     {
-        return base.UpdateUser(request, context);
+        var db = _appDbContext.GetDatabase();
+        var collection = db.GetCollection<Infrastructure.Models.User>("Users");
+        var filter = Builders<Infrastructure.Models.User>.Filter.Eq("login", request.User.Login);
+        var update = Builders<Infrastructure.Models.User>.Update.Set("email", request.User.Email);
+
+        await collection.UpdateOneAsync(filter, update);
+        return new UpdateReply()
+        {
+            Message = "Successfully update!"
+        };
     }
 
     public override async Task<DeleteReply> DeleteUser(DeleteRequest request, ServerCallContext context)
