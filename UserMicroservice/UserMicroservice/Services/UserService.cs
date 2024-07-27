@@ -1,5 +1,8 @@
-﻿using Grpc.Core;
+﻿using Google.Protobuf.Collections;
+using Grpc.Core;
+using MongoDB.Driver;
 using UserMicroservice.Infrastructure.Data.Core;
+using UserMicroservice.Infrastructure.Mapper;
 
 namespace UserMicroservice.Services;
 
@@ -32,9 +35,20 @@ public class UserService : User.UserBase
         };
     }
 
-    public override Task<GetAllReply> GetUsers(GetAllRequest request, ServerCallContext context)
+    public override async Task<GetAllReply> GetUsers(GetAllRequest request, ServerCallContext context)
     {
-        return base.GetUsers(request, context);
+        var db = _appDbContext.GetDatabase();
+        var collection = db.GetCollection<Infrastructure.Models.User>("Users");
+        var users = await collection.Find(_ => true).ToListAsync();
+
+        // mapping user entity
+        var mapper = MapperConfig.InitializeAutomapper();
+        var list = users.Select(x => mapper.Map<UserEntity>(x));
+        
+        var reply = new GetAllReply();
+        reply.Users.AddRange(list);
+        return reply;
+
     }
 
     public override Task<UpdateReply> UpdateUser(UpdateRequest request, ServerCallContext context)
