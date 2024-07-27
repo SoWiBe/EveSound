@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9AoPi24jUE0=",
+  "dgSpecHash": "arX/V93NHcc=",
   "success": true,
   "projectFilePath": "D:\\LearnProjects\\EveSound\\UserMicroservice\\UserMicroservice\\UserMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aleks\\.nuget\\packages\\autofac\\8.0.0\\autofac.8.0.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\autofac.configuration\\7.0.0\\autofac.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\autofac.extensions.dependencyinjection\\9.0.0\\autofac.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

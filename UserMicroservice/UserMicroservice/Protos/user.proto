@@ -33,7 +33,7 @@ message UpdateReply {
 }
 
 message DeleteRequest {
-    string id = 1;
+    string login = 1;
 }
 message DeleteReply {
     string message = 1;

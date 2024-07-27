@@ -40,6 +40,10 @@ D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Use
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\UserMicroservice.runtimeconfig.json
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\UserMicroservice.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\UserMicroservice.pdb
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Autofac.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Autofac.Configuration.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Autofac.Extensions.DependencyInjection.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\AutoMapper.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\AWSSDK.Core.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\DnsClient.dll
@@ -50,6 +54,7 @@ D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grp
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.Net.Client.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Grpc.Net.Common.dll
+D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\MongoDB.Bson.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\MongoDB.Driver.dll
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\MongoDB.Driver.Core.dll
@@ -81,7 +86,3 @@ D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\obj\Debug\net8.0\ref
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\obj\Debug\net8.0\UserMicroservice.pdb
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\obj\Debug\net8.0\UserMicroservice.genruntimeconfig.cache
 D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\obj\Debug\net8.0\ref\UserMicroservice.dll
-D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Autofac.dll
-D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Autofac.Configuration.dll
-D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Autofac.Extensions.DependencyInjection.dll
-D:\LearnProjects\EveSound\UserMicroservice\UserMicroservice\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
