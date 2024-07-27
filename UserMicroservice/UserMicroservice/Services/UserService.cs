@@ -56,8 +56,17 @@ public class UserService : User.UserBase
         return base.UpdateUser(request, context);
     }
 
-    public override Task<DeleteReply> DeleteUser(DeleteRequest request, ServerCallContext context)
+    public override async Task<DeleteReply> DeleteUser(DeleteRequest request, ServerCallContext context)
     {
-        return base.DeleteUser(request, context);
+        var db = _appDbContext.GetDatabase();
+        var collection = db.GetCollection<Infrastructure.Models.User>("Users");
+        var deleteFilter = Builders<Infrastructure.Models.User>.Filter.Eq("login", request.Login);
+
+        await collection.DeleteOneAsync(deleteFilter);
+
+        return new DeleteReply
+        {
+            Message = "Successfully delete!"
+        };
     }
 }
