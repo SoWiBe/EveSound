@@ -11,12 +11,8 @@ import java.util.List;
 public class MusicController {
 
     @GetMapping
-    public List<Music> getAllMusic(){
-        var list = new ArrayList<Music>();
-        list.add(new Music());
-        list.add(new Music());
-        list.add(new Music());
-        return list;
+    public Music getMusic(){
+        return new Music("qwe","ewq","autor","uuu",1223);
     }
 
     @PostMapping
