@@ -14,5 +14,4 @@ package infrastructure.models;
  */
 public class Music {
     //code here
-
 }
