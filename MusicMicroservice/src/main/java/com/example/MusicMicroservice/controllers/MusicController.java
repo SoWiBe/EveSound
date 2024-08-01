@@ -16,17 +16,36 @@ public class MusicController {
     private MusicService musicService;
 
     @PostMapping
-    public Music createMusic(@RequestBody Music music){
+    public Music createMusic(@RequestBody Music music) {
         return musicService.createMusic(music);
     }
 
     @GetMapping("/{id}")
-    public Music getMusicById(@PathVariable String id){
+    public Music getMusicById(@PathVariable String id) {
         return musicService.getMusicById(id).orElse(null);
     }
 
     @GetMapping
     public List<Music> getMusic() {
         return musicService.getAllMusic();
+    }
+
+    /*
+     * @author: Slava
+     * @task: PutMapping (update Music)
+     */
+    @PutMapping("/{id}")
+    public Music updateMusic(@PathVariable String id, @RequestBody Music music) {
+        //need to realize
+        return new Music();
+    }
+
+    /*
+     * @author: Slava
+     * @task: DeleteMapping
+     */
+    @DeleteMapping("/{id}")
+    public void deleteMusic(@PathVariable String id) {
+        //need to realize
     }
 }
