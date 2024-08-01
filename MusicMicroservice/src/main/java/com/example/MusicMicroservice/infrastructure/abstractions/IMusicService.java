@@ -1,6 +1,6 @@
-package abstractions.services;
+package com.example.MusicMicroservice.infrastructure.abstractions;
 
-import infrastructure.models.Music;
+import com.example.MusicMicroservice.infrastructure.models.Music;
 
 import java.util.List;
 import java.util.Optional;

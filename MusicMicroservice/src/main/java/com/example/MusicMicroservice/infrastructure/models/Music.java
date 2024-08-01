@@ -1,4 +1,4 @@
-package infrastructure.models;
+package com.example.MusicMicroservice.infrastructure.models;
 
 /*
     @Author ogurchik
