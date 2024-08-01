@@ -35,8 +35,8 @@ public class MusicController {
      */
     @PutMapping("/{id}")
     public Music updateMusic(@PathVariable String id, @RequestBody Music music) {
-        //need to realize
-        return new Music();
+        music.setId(id);
+        return musicService.updateMusic(music);
     }
 
     /*

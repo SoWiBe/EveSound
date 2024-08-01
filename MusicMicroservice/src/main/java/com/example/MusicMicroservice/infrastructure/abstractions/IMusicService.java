@@ -17,5 +17,5 @@ public interface IMusicService {
     */
     void deleteMusic(String id);
     void deleteAllMusic();
-    Music updateMusic(Music music); // @author Slava
+    Music updateMusic(Music music);
 }
