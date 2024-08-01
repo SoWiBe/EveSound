@@ -1,7 +1,7 @@
-package infrastructure.models;
+package com.example.MusicMicroservice.infrastructure.models;
 
-import infrastructure.models.enums.PorodaType;
-import infrastructure.models.enums.Sex;
+import com.example.MusicMicroservice.infrastructure.models.enums.PorodaType;
+import com.example.MusicMicroservice.infrastructure.models.enums.Sex;
 
 /*
     Example for training

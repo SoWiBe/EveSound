@@ -1,11 +1,10 @@
 package com.example.MusicMicroservice.controllers;
 
-import infrastructure.models.Music;
-import infrastructure.services.MusicService;
+import com.example.MusicMicroservice.infrastructure.models.Music;
+import com.example.MusicMicroservice.infrastructure.services.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

@@ -1,6 +1,6 @@
-package abstractions.repository;
+package com.example.MusicMicroservice.repository;
 
-import infrastructure.models.Music;
+import com.example.MusicMicroservice.infrastructure.models.Music;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

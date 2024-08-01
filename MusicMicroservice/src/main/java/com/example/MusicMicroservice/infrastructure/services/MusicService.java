@@ -1,8 +1,7 @@
-package infrastructure.services;
+package com.example.MusicMicroservice.infrastructure.services;
 
-import abstractions.repository.IMusicRepository;
-import abstractions.services.IMusicService;
-import infrastructure.models.Music;
+import com.example.MusicMicroservice.repository.IMusicRepository;
+import com.example.MusicMicroservice.infrastructure.models.Music;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
