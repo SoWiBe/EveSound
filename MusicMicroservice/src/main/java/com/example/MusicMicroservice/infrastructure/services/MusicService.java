@@ -36,7 +36,12 @@ public class MusicService implements IMusicService {
 
     @Override
     public void deleteMusic(String id) {
-        // need to realize
+        musicRepository.deleteById(id);
+    }
+
+    @Override
+    public void deleteAllMusic() {
+        musicRepository.deleteAll();
     }
 
     @Override
