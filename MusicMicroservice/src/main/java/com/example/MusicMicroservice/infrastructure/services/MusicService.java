@@ -46,7 +46,6 @@ public class MusicService implements IMusicService {
 
     @Override
     public Music updateMusic(Music music) {
-        // need to realize
-        return new Music();
+        return musicRepository.save(music);
     }
 }
