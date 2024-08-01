@@ -16,5 +16,6 @@ public interface IMusicService {
         Logic: find music by id and after delete or update
     */
     void deleteMusic(String id);
+    void deleteAllMusic();
     Music updateMusic(Music music); // @author Slava
 }

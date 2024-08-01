@@ -1,7 +1,7 @@
 package com.example.MusicMicroservice.infrastructure.services;
 
 import com.example.MusicMicroservice.infrastructure.abstractions.IMusicService;
-import com.example.MusicMicroservice.repository.IMusicRepository;
+import com.example.MusicMicroservice.infrastructure.abstractions.repository.IMusicRepository;
 import com.example.MusicMicroservice.infrastructure.models.Music;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +36,12 @@ public class MusicService implements IMusicService {
 
     @Override
     public void deleteMusic(String id) {
-        // need to realize
+        musicRepository.deleteById(id);
+    }
+
+    @Override
+    public void deleteAllMusic() {
+        musicRepository.deleteAll();
     }
 
     @Override

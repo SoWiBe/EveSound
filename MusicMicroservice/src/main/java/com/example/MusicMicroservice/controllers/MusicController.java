@@ -45,6 +45,6 @@ public class MusicController {
      */
     @DeleteMapping("/{id}")
     public void deleteMusic(@PathVariable String id) {
-        //need to realize
+        musicService.deleteMusic(id);
     }
 }
