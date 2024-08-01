@@ -18,10 +18,18 @@ public class Music {
     String author;
     String description;
     long time;
- //   String genre;
- //   String text;
+
+    public Music(){}
+
     public Music(String id, String title, String author, String description, long time){
         this.id = id;
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.time = time;
+    }
+
+    public Music(String title, String author, String description, long time) {
         this.title = title;
         this.author = author;
         this.description = description;
@@ -68,10 +76,5 @@ public class Music {
         this.time = time;
     }
 
-    public Music(String title, String author, String description, long time) {
-        this.title = title;
-        this.author = author;
-        this.description = description;
-        this.time = time;
-    }
+
 }
