@@ -1,4 +1,4 @@
-package com.example.MusicMicroservice.repository;
+package com.example.MusicMicroservice.infrastructure.abstractions.repository;
 
 import com.example.MusicMicroservice.infrastructure.models.Music;
 import org.springframework.data.mongodb.repository.MongoRepository;
