@@ -1,4 +1,4 @@
-package com.example.MusicMicroservice.infrastructure.services;
+package com.example.MusicMicroservice.infrastructure.abstractions;
 
 import com.example.MusicMicroservice.infrastructure.models.Music;
 

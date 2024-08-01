@@ -1,5 +1,6 @@
 package com.example.MusicMicroservice.infrastructure.services;
 
+import com.example.MusicMicroservice.infrastructure.abstractions.IMusicService;
 import com.example.MusicMicroservice.repository.IMusicRepository;
 import com.example.MusicMicroservice.infrastructure.models.Music;
 import org.springframework.beans.factory.annotation.Autowired;
