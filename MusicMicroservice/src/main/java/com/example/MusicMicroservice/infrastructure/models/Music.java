@@ -1,5 +1,7 @@
 package com.example.MusicMicroservice.infrastructure.models;
 
+import java.util.List;
+
 /*
     @Author ogurchik
     @Task-number1 need to create model for music
@@ -15,33 +17,28 @@ package com.example.MusicMicroservice.infrastructure.models;
 public class Music {
     String id;
     String title;
-    String author;
+    Author author;
     String description;
     long time;
+    List<Genre> genres;
 
     public Music(){}
 
-    public Music(String id, String title, String author, String description, long time){
+    public Music(String id, String title, Author author, String description, long time, List<Genre> genres) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.description = description;
         this.time = time;
+        this.genres = genres;
     }
 
-    public Music(String title, String author, String description, long time) {
+    public Music(String title, Author author, String description, long time, List<Genre> genres) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.time = time;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+        this.genres = genres;
     }
 
     public String getId() {
@@ -52,11 +49,19 @@ public class Music {
         this.id = id;
     }
 
-    public String getAuthor() {
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -76,5 +81,11 @@ public class Music {
         this.time = time;
     }
 
+    public List<Genre> getGenres() {
+        return genres;
+    }
 
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
+    }
 }
