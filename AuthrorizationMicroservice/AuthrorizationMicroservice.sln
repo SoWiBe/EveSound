@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthrorizationMicroservice", "AuthrorizationMicroservice\AuthrorizationMicroservice.csproj", "{14116149-A40D-4C06-8D26-78612A648842}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{BB61B9D9-B58C-4299-B0E3-702EEA59FD3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{14116149-A40D-4C06-8D26-78612A648842}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14116149-A40D-4C06-8D26-78612A648842}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14116149-A40D-4C06-8D26-78612A648842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB61B9D9-B58C-4299-B0E3-702EEA59FD3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB61B9D9-B58C-4299-B0E3-702EEA59FD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB61B9D9-B58C-4299-B0E3-702EEA59FD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB61B9D9-B58C-4299-B0E3-702EEA59FD3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
