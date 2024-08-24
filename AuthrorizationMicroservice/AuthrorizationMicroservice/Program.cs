@@ -1,4 +1,6 @@
 using System.Text;
+using AuthrorizationMicroservice.Infrastructure;
+using Autofac;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -21,7 +23,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.RequireHttpsMetadata = false;
     options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
+    options.TokenValidationParameters = new TokenValidationParameters   
     {
         ValidateIssuer = true,
         ValidateAudience = true,
@@ -34,6 +36,12 @@ builder.Services.AddAuthentication(options =>
 });
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
+
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+{
+    containerBuilder.RegisterModule(new DefaultInfrastructureModule());
+});
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
