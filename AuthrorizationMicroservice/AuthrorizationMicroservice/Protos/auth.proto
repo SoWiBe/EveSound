@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuthrorizationMicroservice";
+
+package greet;
+
+service Authorization {
+    rpc Authorize (AuthorizeRequest) returns (AuthorizeReply);
+    rpc Registration (RegistrationRequest) returns (RegistrationReply);
+}
+
+message AuthorizeRequest {
+    string login = 1;
+    string password = 2;
+}
+
+message AuthorizeReply {
+    string message = 1;
+}
+
+message RegistrationRequest {
+    string login = 1;
+    string password = 2;
+    string email = 3;
+}
+
+message RegistrationReply {
+    string message = 1;
+}
