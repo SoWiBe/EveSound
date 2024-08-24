@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = "aleksey.dantist@gmail.com",
         ValidAudience = "aleksey.dantist@gmail.com",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
     };
 });
 builder.Services.AddAuthorization();
