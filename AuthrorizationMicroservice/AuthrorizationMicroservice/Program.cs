@@ -1,19 +1,20 @@
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
+using AuthrorizationMicroservice;
+using AuthrorizationMicroservice.Infrastructure;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Authorization = AuthrorizationMicroservice.Endpoints.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 var key = "ThisIsASecretKeyForJwt";
 
-builder.Services.AddAuthentication(options =>
+/*builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -21,7 +22,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.RequireHttpsMetadata = false;
     options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
+    options.TokenValidationParameters = new TokenValidationParameters   
     {
         ValidateIssuer = true,
         ValidateAudience = true,
@@ -29,12 +30,18 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = "aleksey.dantist@gmail.com",
         ValidAudience = "aleksey.dantist@gmail.com",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
     };
-});
+});*/
 builder.Services.AddAuthorization();
-builder.Services.AddControllers();
 
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+{
+    containerBuilder.RegisterModule(new DefaultInfrastructureModule());
+});
+builder.Services.AddGrpc();
+var app = builder.Build();
+app.MapGrpcService<Authorization>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -43,6 +50,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 
 app.Run();

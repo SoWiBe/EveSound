@@ -5,16 +5,24 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <Protobuf Include="Protos\auth.proto" GrpcServices="Both" />
+    </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Autofac" Version="8.0.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.65.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.7.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.7.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.7.2" />
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.2" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Endpoints\" />
       <Folder Include="Infrastructure\ActionsResults\" />
       <Folder Include="Infrastructure\Data\" />
       <Folder Include="Infrastructure\Endpoints\" />
