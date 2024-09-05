@@ -13,4 +13,5 @@ public interface IMusicService {
     void deleteAllMusic();
     Music updateMusic(Music music);
     List<Music> shuffleMusic(List<Music> music);
+    String play(String idMusic, String idUser);
 }

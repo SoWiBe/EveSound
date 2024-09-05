@@ -56,4 +56,13 @@ public class MusicService implements IMusicService {
         Collections.shuffle(music);
         return music;
     }
+
+    @Override
+    public String play(String idMusic, String idUser) {
+        var musicResult = getMusicById(idMusic);
+        var music = musicResult.get(); //получение музыки
+        music.setPlayed(true); //установка значение запуска трека
+        updateMusic(music); //обновление музыки
+        return "success";
+    }
 }
