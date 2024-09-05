@@ -6,6 +6,8 @@ import com.example.MusicMicroservice.infrastructure.models.Music;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,5 +49,11 @@ public class MusicService implements IMusicService {
     @Override
     public Music updateMusic(Music music) {
         return musicRepository.save(music);
+    }
+
+    @Override
+    public List<Music> shuffleMusic(List<Music> music) {
+        Collections.shuffle(music);
+        return music;
     }
 }
