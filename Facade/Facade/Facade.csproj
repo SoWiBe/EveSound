@@ -22,9 +22,6 @@
 
     <ItemGroup>
       <Folder Include="Endpoints\" />
-      <Folder Include="Infrastructure\Data\" />
-      <Folder Include="Infrastructure\Endpoints\" />
-      <Folder Include="Infrastructure\Repositories\" />
     </ItemGroup>
 
 </Project>

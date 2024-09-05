@@ -36,6 +36,7 @@ public class Music {
         this.time = time;
     }
 
+
     public String getTitle() {
         return title;
     }
