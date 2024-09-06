@@ -18,9 +18,14 @@ public class MusicService : IMusicService
     public async Task<ErrorOr<GetMusicResponse>> GetMusic()
     {
         var url = MUSIC_SERVICE_API;
-        var result = await _apiRepository.GetResponseAsync<GetMusicResponse>(url);
+        var result = await _apiRepository.GetResponseAsync<IEnumerable<Common.Models.Music>>(url);
 
-        return result;
+        var response = new GetMusicResponse
+        {
+            Musics = result.Value
+        };
+        
+        return response;
     }
 
     public Task<ErrorOr<CreateMusicResponse>> CreateMusic(CreateMusicRequest request)

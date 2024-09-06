@@ -2,6 +2,7 @@
 using Common.Models;
 using Facade.Abstractions.Services.Music;
 using Facade.Infrastructure.Endpoints;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Facade.Endpoints.MusicEndpoints;
@@ -15,6 +16,7 @@ public class CreateMusic : EndpointBaseAsync.WithRequest<CreateMusicRequest>.Wit
         _musicService = musicService;
     }
     
+    [AllowAnonymous]
     [HttpPost("/api/v1/music")]
     public override async Task<ActionResult<CreateMusicResponse>> HandleAsync(CreateMusicRequest request, 
         CancellationToken cancellationToken = default)
