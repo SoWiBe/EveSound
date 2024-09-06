@@ -1,7 +1,5 @@
 package com.example.MusicMicroservice.infrastructure.models;
 
-import java.util.List;
-
 /*
     @Author ogurchik
     @Task-number1 need to create model for music
@@ -17,28 +15,29 @@ import java.util.List;
 public class Music {
     String id;
     String title;
-    Author author;
+    String author;
     String description;
+    boolean isPlayed = false;
     long time;
-    List<Genre> genres;
 
     public Music(){}
 
-    public Music(String id, String title, Author author, String description, long time, List<Genre> genres) {
+
+    public Music(String id, String title, String author, String description, boolean isPlayed, long time) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.description = description;
+        this.isPlayed = isPlayed;
         this.time = time;
-        this.genres = genres;
     }
 
-    public Music(String title, Author author, String description, long time, List<Genre> genres) {
+    public Music(String title, String author, String description, boolean isPlayed, long time) {
         this.title = title;
         this.author = author;
         this.description = description;
+        this.isPlayed = isPlayed;
         this.time = time;
-        this.genres = genres;
     }
 
     public String getId() {
@@ -57,11 +56,11 @@ public class Music {
         this.title = title;
     }
 
-    public Author getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -73,19 +72,19 @@ public class Music {
         this.description = description;
     }
 
+    public boolean isPlayed() {
+        return isPlayed;
+    }
+
+    public void setPlayed(boolean played) {
+        isPlayed = played;
+    }
+
     public long getTime() {
         return time;
     }
 
     public void setTime(long time) {
         this.time = time;
-    }
-
-    public List<Genre> getGenres() {
-        return genres;
-    }
-
-    public void setGenres(List<Genre> genres) {
-        this.genres = genres;
     }
 }
