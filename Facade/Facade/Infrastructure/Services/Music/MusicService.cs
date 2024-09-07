@@ -28,8 +28,11 @@ public class MusicService : IMusicService
         return response;
     }
 
-    public Task<ErrorOr<CreateMusicResponse>> CreateMusic(CreateMusicRequest request)
+    public async Task<ErrorOr<CreateMusicResponse>> CreateMusic(CreateMusicRequest request)
     {
-        throw new NotImplementedException();
+        var url = MUSIC_SERVICE_API;
+        var result = await _apiRepository.PostDataWithResponseAsync<CreateMusicResponse>(url, request);
+
+        return result;
     }
 }
