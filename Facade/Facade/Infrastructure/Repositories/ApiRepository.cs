@@ -67,7 +67,7 @@ public class ApiRepository : IApiRepository
         {
             var response = await client.SendAsync(request, HttpCompletionOption.ResponseContentRead);
             var res = await response.Content.ReadAsStringAsync();
-            if (!response.IsSuccessStatusCode)
+             if (!response.IsSuccessStatusCode)
                 return Error.Unexpected(ConvertCode(res), Convert(res));
             
             var responseContent = await response.Content.ReadAsStringAsync();

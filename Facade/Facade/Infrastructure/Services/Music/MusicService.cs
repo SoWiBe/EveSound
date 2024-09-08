@@ -1,4 +1,5 @@
-﻿using Facade.Abstractions.Repositories;
+﻿using Facade.Abstractions.Errors;
+using Facade.Abstractions.Repositories;
 using Facade.Abstractions.Services.Music;
 using Facade.Endpoints.MusicEndpoints;
 using Facade.Errors;
@@ -28,8 +29,19 @@ public class MusicService : IMusicService
         return response;
     }
 
-    public Task<ErrorOr<CreateMusicResponse>> CreateMusic(CreateMusicRequest request)
+    public async Task<ErrorOr<CreateMusicResponse>> CreateMusic(CreateMusicRequest request)
     {
-        throw new NotImplementedException();
+        var url = MUSIC_SERVICE_API;
+        var result = await _apiRepository.PostDataWithResponseAsync<CreateMusicResponse>(url, request);
+
+        return result;
+    }
+
+    public async Task<IErrorOr> DeleteMusic(DeleteMusicRequest request)
+    {
+        var url = MUSIC_SERVICE_API + "/" + request.Id;
+        var result = await _apiRepository.DeleteResponseAsync<DeleteMusicResponse>(url, request);
+
+        return result;
     }
 }

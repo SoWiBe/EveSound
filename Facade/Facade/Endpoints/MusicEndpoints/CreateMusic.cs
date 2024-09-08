@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using Common.Models;
+using Common.Models.Files;
 using Facade.Abstractions.Services.Music;
 using Facade.Infrastructure.Endpoints;
 using Microsoft.AspNetCore.Authorization;
@@ -21,16 +22,21 @@ public class CreateMusic : EndpointBaseAsync.WithRequest<CreateMusicRequest>.Wit
     public override async Task<ActionResult<CreateMusicResponse>> HandleAsync(CreateMusicRequest request, 
         CancellationToken cancellationToken = default)
     {
-        return Ok(new CreateMusicResponse());
+        var result = await _musicService.CreateMusic(request);
+        return Ok(result.Value);
     }
 }
 
 public class CreateMusicResponse
 {
-    public Music Music { get; set; }
+    [JsonPropertyName("id")] public string Id { get; set; }
+    [JsonPropertyName("title")] public string Title { get; set; }
+    [JsonPropertyName("time")] public int Time { get; set; }
+    [JsonPropertyName("played")] public bool Played { get; set; }
 }
 
 public class CreateMusicRequest
 {
     [JsonPropertyName("title")] public string Title { get; set; }
+    [JsonPropertyName("fileInfo")] public FileInfoModel fileInfo { get; set; }
 }

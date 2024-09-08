@@ -8,4 +8,5 @@ public interface IMusicService
 {
     Task<ErrorOr<GetMusicResponse>> GetMusic();
     Task<ErrorOr<CreateMusicResponse>> CreateMusic(CreateMusicRequest request);
+    Task<IErrorOr> DeleteMusic(DeleteMusicRequest request);
 }
