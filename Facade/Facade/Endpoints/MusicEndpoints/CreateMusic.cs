@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using Common.Models;
+using Common.Models.Files;
 using Facade.Abstractions.Services.Music;
 using Facade.Infrastructure.Endpoints;
 using Microsoft.AspNetCore.Authorization;
@@ -37,4 +38,5 @@ public class CreateMusicResponse
 public class CreateMusicRequest
 {
     [JsonPropertyName("title")] public string Title { get; set; }
+    [JsonPropertyName("fileInfo")] public FileInfoModel fileInfo { get; set; }
 }

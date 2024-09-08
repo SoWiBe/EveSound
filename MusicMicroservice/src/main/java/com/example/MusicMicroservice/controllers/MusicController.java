@@ -2,12 +2,10 @@ package com.example.MusicMicroservice.controllers;
 
 import com.example.MusicMicroservice.infrastructure.models.Music;
 import com.example.MusicMicroservice.infrastructure.services.MusicService;
-import com.mongodb.lang.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/api/v1/music")
