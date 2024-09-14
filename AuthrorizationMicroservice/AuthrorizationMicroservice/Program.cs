@@ -5,50 +5,37 @@ using Autofac.Extensions.DependencyInjection;
 using Authorization = AuthrorizationMicroservice.Endpoints.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
+const string version = "v0.0.1";
 
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-
-var key = "ThisIsASecretKeyForJwt";
-
-/*builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters   
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = "aleksey.dantist@gmail.com",
-        ValidAudience = "aleksey.dantist@gmail.com",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
-    };
-});*/
-builder.Services.AddAuthorization();
-
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule(new DefaultInfrastructureModule());
 });
-builder.Services.AddGrpc();
+
+builder.Services.AddMvc();
+builder.Services.AddControllersWithViews();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
-app.MapGrpcService<Authorization>();
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+
+app.UseSwagger();
+app.UseSwaggerUI();
+if (!app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseHsts();
 }
 
+app.UseRouting();
+
 app.UseHttpsRedirection();
+
+app.UseAuthorization();
+app.UseAuthentication();
+app.UseStaticFiles();
+
+app.MapControllers();
 
 app.Run();
