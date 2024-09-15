@@ -1,7 +1,7 @@
 ﻿using AuthrorizationMicroservice.Infrastructure.Abstractions.Services;
 using Grpc.Core;
 
-namespace AuthrorizationMicroservice.Endpoints;
+namespace AuthrorizationMicroservice.Services;
 
 public class Authorization : AuthrorizationMicroservice.Authorization.AuthorizationBase
 {
@@ -14,7 +14,10 @@ public class Authorization : AuthrorizationMicroservice.Authorization.Authorizat
     
     public override Task<AuthorizeReply> Authorize(AuthorizeRequest request, ServerCallContext context)
     {
-        return base.Authorize(request, context);
+        return Task.FromResult(new AuthorizeReply
+        {
+            Message = "Ная, я тебя люблю!"
+        });
     }
 
     public override Task<RegistrationReply> Registration(RegistrationRequest request, ServerCallContext context)
