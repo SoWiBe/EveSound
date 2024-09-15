@@ -12,11 +12,12 @@ public class Authorization : AuthrorizationMicroservice.Authorization.Authorizat
         _authorizationService = authorizationService;
     }
     
-    public override Task<AuthorizeReply> Authorize(AuthorizeRequest request, ServerCallContext context)
+    public override async Task<AuthorizeReply> Authorize(AuthorizeRequest request, ServerCallContext context)
     {
-        return Task.FromResult(new AuthorizeReply
+        var result = await _authorizationService.AuthorizeAsync();
+        return await Task.FromResult(new AuthorizeReply
         {
-            Message = "Ная, я тебя люблю!"
+            Message = result.ToString()
         });
     }
 

@@ -16,25 +16,22 @@ public class AuthorizationService : IAuthorizationService
         _configuration = configuration;
     }
     
-    public Task<JwtSecurityToken> AuthorizeAsync(ClaimsPrincipal user, object resource,
-        IEnumerable<IAuthorizationRequirement> requirements)
+    public Task<SecurityToken> AuthorizeAsync()
     {
-        var claims = new[]
+        var handler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes("asld;ifhllhlkjjhsdlkjafhl8467584");
+        var credentials = new SigningCredentials(
+            new SymmetricSecurityKey(key),
+            SecurityAlgorithms.HmacSha256Signature);
+
+        var tokenDescriptor = new SecurityTokenDescriptor
         {
-            new Claim(JwtRegisteredClaimNames.Sub, ""),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            Subject = new ClaimsIdentity() {Claims = {}},
+            Expires = DateTime.UtcNow.AddMinutes(15),
+            SigningCredentials = credentials,
         };
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        var token = new JwtSecurityToken(
-            issuer: _configuration["Jwt:Issuer"],
-            audience: _configuration["Jwt:Audience"],
-            claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
-            signingCredentials: creds
-        );
+        var token = handler.CreateToken(tokenDescriptor);
 
         return Task.FromResult(token);
     }
