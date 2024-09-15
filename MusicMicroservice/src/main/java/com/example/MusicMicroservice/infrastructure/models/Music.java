@@ -17,32 +17,27 @@ public class Music {
     String title;
     String author;
     String description;
+    boolean isPlayed = false;
     long time;
 
     public Music(){}
 
-    public Music(String id, String title, String author, String description, long time){
+
+    public Music(String id, String title, String author, String description, boolean isPlayed, long time) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.description = description;
+        this.isPlayed = isPlayed;
         this.time = time;
     }
 
-    public Music(String title, String author, String description, long time) {
+    public Music(String title, String author, String description, boolean isPlayed, long time) {
         this.title = title;
         this.author = author;
         this.description = description;
+        this.isPlayed = isPlayed;
         this.time = time;
-    }
-
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getId() {
@@ -51,6 +46,14 @@ public class Music {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {
@@ -69,6 +72,14 @@ public class Music {
         this.description = description;
     }
 
+    public boolean isPlayed() {
+        return isPlayed;
+    }
+
+    public void setPlayed(boolean played) {
+        isPlayed = played;
+    }
+
     public long getTime() {
         return time;
     }
@@ -76,6 +87,4 @@ public class Music {
     public void setTime(long time) {
         this.time = time;
     }
-
-
 }

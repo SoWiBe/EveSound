@@ -5,6 +5,8 @@ using Facade.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 const string version = "v0.0.1";
 
+
+
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
