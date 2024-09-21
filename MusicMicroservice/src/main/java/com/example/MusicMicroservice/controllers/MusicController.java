@@ -1,6 +1,7 @@
 package com.example.MusicMicroservice.controllers;
 
 import com.example.MusicMicroservice.infrastructure.models.Music;
+import com.example.MusicMicroservice.infrastructure.requests.PlayRequest;
 import com.example.MusicMicroservice.infrastructure.services.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,13 +40,13 @@ public class MusicController {
         musicService.deleteMusic(id);
     }
 
-    @PostMapping("/shuffle")
-    public List<Music> shuffleMusic(@RequestBody List<Music> music){
-        return musicService.shuffleMusic(music);
-    }
-
+//    @PostMapping("/shuffle")
+//    public List<Music> shuffleMusic(@RequestBody List<Music> music){
+//        return musicService.shuffleMusic(music);
+//    }
+//
     @PostMapping("/play")
-    public String playMusic(@RequestBody String idMusic, @RequestBody String idUser){
-        return musicService.play(idMusic, idUser);
+    public String playMusic(@RequestBody PlayRequest request){
+        return musicService.play(request.music, request.user);
     }
 }

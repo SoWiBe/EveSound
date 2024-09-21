@@ -2,16 +2,19 @@ package com.example.MusicMicroservice.infrastructure.services;
 
 import com.example.MusicMicroservice.infrastructure.abstractions.StorageService;
 import com.example.MusicMicroservice.infrastructure.exceptions.StorageException;
+import com.example.MusicMicroservice.infrastructure.exceptions.StorageFileNotFoundException;
 import com.example.MusicMicroservice.infrastructure.storage.StorageProperties;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -72,12 +75,19 @@ public class FileSystemStorageService implements StorageService {
 
     @Override
     public Path load(String fileName) {
-        return null;
+        return rootLocation.resolve(fileName);
     }
 
     @Override
-    public Resource loadAsResource() {
-        return null;
+    public Resource loadAsResource(String filename) {
+        try {
+            var file = load(filename);
+            var resource = new UrlResource(file.toUri());
+            if(resource.exists() || resource.isReadable()) return resource;
+            throw new StorageFileNotFoundException("Could not read file: " + filename);
+        } catch (MalformedURLException e){
+            throw new StorageFileNotFoundException("Could not read file: " + filename, e);
+        }
     }
 
     @Override

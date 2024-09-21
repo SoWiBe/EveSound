@@ -1,18 +1,22 @@
 package com.example.MusicMicroservice.controllers;
 
 import com.example.MusicMicroservice.infrastructure.abstractions.StorageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.stream.Collectors;
 
-@Controller
+@RestController
+@RequestMapping("/api/v1/file")
 public class FileController {
 
-    private StorageService storageService;
+    private final StorageService storageService;
 
+    @Autowired
     public FileController(StorageService storageService) {
         this.storageService = storageService;
     }
@@ -28,6 +32,12 @@ public class FileController {
         );
 
         return "listFiles";
+    }
+
+    @PostMapping("/load")
+    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+        storageService.store(file);
+        return "redirect:/";
     }
 
 
