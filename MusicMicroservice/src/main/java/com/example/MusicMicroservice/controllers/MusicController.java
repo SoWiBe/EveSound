@@ -25,6 +25,7 @@ public class MusicController {
         return musicService.getMusicById(id).orElse(null);
     }
 
+    @CrossOrigin
     @GetMapping
     public List<Music> getMusic() {
         return musicService.getAllMusic();

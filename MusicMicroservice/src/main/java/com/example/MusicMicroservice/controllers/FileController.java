@@ -37,8 +37,6 @@ public class FileController {
     @PostMapping("/load")
     public String handleFileUpload(@RequestParam("file") MultipartFile file) {
         storageService.store(file);
-        return "redirect:/";
+        return "You successfully uploaded " + file.getOriginalFilename() + "!";
     }
-
-
 }
